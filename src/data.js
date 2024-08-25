@@ -296,182 +296,533 @@ const networkingConceptsAndCommands = [
       "reaver --bssid 00:11:22:33:44:55 --channel 6 --interface wlan0 -vvv --no-associate",
     ],
   },
-  [
-    {
-      topic: "Changing the Keyboard Layout",
-      description: {
-        english:
-          "Adjusting the keyboard layout ensures that you can type special characters correctly and use the keyboard effectively according to your locale.",
-        hindi:
-          "Keyboard layout ko adjust karna yeh sunishchit karta hai ki aap special characters sahi se type kar sakein aur apne locale ke anusaar keyboard ka sahi upayog kar sakein.",
-      },
-      examples: [
-        "Using 'sudo dpkg-reconfigure keyboard-configuration' to change the keyboard layout via the terminal.",
-      ],
-      commands: [
-        "sudo dpkg-reconfigure keyboard-configuration",
-        "sudo service keyboard-setup restart",
-      ],
+
+  {
+    topic: "Changing the Keyboard Layout",
+    description: {
+      english:
+        "Adjusting the keyboard layout ensures that you can type special characters correctly and use the keyboard effectively according to your locale.",
+      hindi:
+        "Keyboard layout ko adjust karna yeh sunishchit karta hai ki aap special characters sahi se type kar sakein aur apne locale ke anusaar keyboard ka sahi upayog kar sakein.",
     },
-    {
-      topic: "Updating Kali Linux",
-      description: {
-        english:
-          "Updating your system ensures that you have the latest security patches and software updates. This step is crucial for maintaining system stability and security.",
-        hindi:
-          "System ko update karna sunishchit karta hai ki aapke paas latest security patches aur software updates hain. Yeh step system ki stability aur security banaye rakhne ke liye mahatvapurn hai.",
-      },
-      examples: [
-        "Running 'sudo apt update -y && sudo apt upgrade -y' to update and upgrade all installed packages.",
-      ],
-      commands: [
-        "sudo apt update -y && sudo apt upgrade -y",
-        "sudo apt autoremove -y",
-        "sudo apt update && sudo dist-upgrade -y",
-      ],
+    examples: [
+      "Using 'sudo dpkg-reconfigure keyboard-configuration' to change the keyboard layout via the terminal.",
+    ],
+    commands: [
+      "sudo dpkg-reconfigure keyboard-configuration",
+      "sudo service keyboard-setup restart",
+    ],
+  },
+  {
+    topic: "Updating Kali Linux",
+    description: {
+      english:
+        "Updating your system ensures that you have the latest security patches and software updates. This step is crucial for maintaining system stability and security.",
+      hindi:
+        "System ko update karna sunishchit karta hai ki aapke paas latest security patches aur software updates hain. Yeh step system ki stability aur security banaye rakhne ke liye mahatvapurn hai.",
     },
-    {
-      topic: "Changing Default Password",
-      description: {
-        english:
-          "Changing the default password helps secure your system from unauthorized access by ensuring that the default credentials are no longer in use.",
-        hindi:
-          "Default password ko change karna aapke system ko unauthorized access se secure karta hai aur ensure karta hai ki default credentials ka upayog na ho.",
-      },
-      examples: [
-        "Using 'passwd' to change the default password for the current user.",
-      ],
-      commands: ["passwd", "sudo passwd root"],
+    examples: [
+      "Running 'sudo apt update -y && sudo apt upgrade -y' to update and upgrade all installed packages.",
+    ],
+    commands: [
+      "sudo apt update -y && sudo apt upgrade -y",
+      "sudo apt autoremove -y",
+      "sudo apt update && sudo dist-upgrade -y",
+    ],
+  },
+  {
+    topic: "Changing Default Password",
+    description: {
+      english:
+        "Changing the default password helps secure your system from unauthorized access by ensuring that the default credentials are no longer in use.",
+      hindi:
+        "Default password ko change karna aapke system ko unauthorized access se secure karta hai aur ensure karta hai ki default credentials ka upayog na ho.",
     },
-    {
-      topic: "Taking a Snapshot (VM only)",
-      description: {
-        english:
-          "Taking a snapshot of your VM allows you to save the current state of your system. This is useful for reverting to a stable state if any issues arise.",
-        hindi:
-          "VM ka snapshot lena aapke system ki current state ko save kar leta hai. Yeh useful hai agar koi issue aata hai to aap stable state par wapas ja sakte hain.",
-      },
-      examples: [
-        "Creating a snapshot in VirtualBox to save the state of a fresh installation.",
-      ],
-      commands: ["VirtualBox UI steps to create a snapshot"],
+    examples: [
+      "Using 'passwd' to change the default password for the current user.",
+    ],
+    commands: ["passwd", "sudo passwd root"],
+  },
+  {
+    topic: "Taking a Snapshot (VM only)",
+    description: {
+      english:
+        "Taking a snapshot of your VM allows you to save the current state of your system. This is useful for reverting to a stable state if any issues arise.",
+      hindi:
+        "VM ka snapshot lena aapke system ki current state ko save kar leta hai. Yeh useful hai agar koi issue aata hai to aap stable state par wapas ja sakte hain.",
     },
-    {
-      topic: "Creating a Low Privileged User Account",
-      description: {
-        english:
-          "Creating a low-privileged user account helps in enhancing security by preventing unnecessary access to root privileges.",
-        hindi:
-          "Low-privileged user account banana security ko enhance karta hai aur root privileges ke unnecessary access ko prevent karta hai.",
-      },
-      examples: [
-        "Creating a new user with 'sudo adduser username' and adding it to the sudo group.",
-      ],
-      commands: [
-        "sudo adduser username",
-        "sudo usermod -aG sudo username",
-        "sudo chsh -s /bin/bash username",
-      ],
+    examples: [
+      "Creating a snapshot in VirtualBox to save the state of a fresh installation.",
+    ],
+    commands: ["VirtualBox UI steps to create a snapshot"],
+  },
+  {
+    topic: "Creating a Low Privileged User Account",
+    description: {
+      english:
+        "Creating a low-privileged user account helps in enhancing security by preventing unnecessary access to root privileges.",
+      hindi:
+        "Low-privileged user account banana security ko enhance karta hai aur root privileges ke unnecessary access ko prevent karta hai.",
     },
-    {
-      topic: "Installing Guake Terminal",
-      description: {
-        english:
-          "Guake Terminal provides a convenient drop-down terminal interface, which can enhance productivity and ease of use for frequent terminal tasks.",
-        hindi:
-          "Guake Terminal ek convenient drop-down terminal interface provide karta hai, jo frequent terminal tasks ke liye productivity aur ease of use ko enhance karta hai.",
-      },
-      examples: [
-        "Installing Guake Terminal with 'sudo apt-get install guake' and configuring it to start automatically.",
-      ],
-      commands: [
-        "sudo apt-get install guake",
-        "sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart/",
-      ],
+    examples: [
+      "Creating a new user with 'sudo adduser username' and adding it to the sudo group.",
+    ],
+    commands: [
+      "sudo adduser username",
+      "sudo usermod -aG sudo username",
+      "sudo chsh -s /bin/bash username",
+    ],
+  },
+  {
+    topic: "Installing Guake Terminal",
+    description: {
+      english:
+        "Guake Terminal provides a convenient drop-down terminal interface, which can enhance productivity and ease of use for frequent terminal tasks.",
+      hindi:
+        "Guake Terminal ek convenient drop-down terminal interface provide karta hai, jo frequent terminal tasks ke liye productivity aur ease of use ko enhance karta hai.",
     },
-    {
-      topic: "Customizing Your Terminal",
-      description: {
-        english:
-          "Customizing your terminal helps improve your workflow by tailoring the appearance and functionality to your preferences.",
-        hindi:
-          "Terminal ko customize karna aapke workflow ko improve karta hai by tailoring appearance aur functionality ko aapke preferences ke according.",
-      },
-      examples: [
-        "Switching from Bash to ZSH for an enhanced terminal experience.",
-      ],
-      commands: [],
+    examples: [
+      "Installing Guake Terminal with 'sudo apt-get install guake' and configuring it to start automatically.",
+    ],
+    commands: [
+      "sudo apt-get install guake",
+      "sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart/",
+    ],
+  },
+  {
+    topic: "Customizing Your Terminal",
+    description: {
+      english:
+        "Customizing your terminal helps improve your workflow by tailoring the appearance and functionality to your preferences.",
+      hindi:
+        "Terminal ko customize karna aapke workflow ko improve karta hai by tailoring appearance aur functionality ko aapke preferences ke according.",
     },
-    {
-      topic: "Installing Your Favorite Code Editor",
-      description: {
-        english:
-          "Installing a code editor like Visual Studio Code provides a powerful environment for coding, debugging, and managing your development projects.",
-        hindi:
-          "Code editor jaise Visual Studio Code install karna aapko coding, debugging, aur development projects manage karne ke liye ek powerful environment provide karta hai.",
-      },
-      examples: [
-        "Installing Visual Studio Code using 'sudo apt install ./code_yourversion_amd64.deb'.",
-      ],
-      commands: ["sudo apt install ./code_yourversion_amd64.deb"],
+    examples: [
+      "Switching from Bash to ZSH for an enhanced terminal experience.",
+    ],
+    commands: [],
+  },
+  {
+    topic: "Installing Your Favorite Code Editor",
+    description: {
+      english:
+        "Installing a code editor like Visual Studio Code provides a powerful environment for coding, debugging, and managing your development projects.",
+      hindi:
+        "Code editor jaise Visual Studio Code install karna aapko coding, debugging, aur development projects manage karne ke liye ek powerful environment provide karta hai.",
     },
-    {
-      topic: "Installing OpenVAS",
-      description: {
-        english:
-          "OpenVAS is a comprehensive vulnerability scanner that helps in identifying and managing security vulnerabilities in your system.",
-        hindi:
-          "OpenVAS ek comprehensive vulnerability scanner hai jo aapke system mein security vulnerabilities ko identify aur manage karne mein madad karta hai.",
-      },
-      examples: [
-        "Using OpenVAS to run security scans and identify potential issues.",
-      ],
-      commands: [],
+    examples: [
+      "Installing Visual Studio Code using 'sudo apt install ./code_yourversion_amd64.deb'.",
+    ],
+    commands: ["sudo apt install ./code_yourversion_amd64.deb"],
+  },
+  {
+    topic: "Installing OpenVAS",
+    description: {
+      english:
+        "OpenVAS is a comprehensive vulnerability scanner that helps in identifying and managing security vulnerabilities in your system.",
+      hindi:
+        "OpenVAS ek comprehensive vulnerability scanner hai jo aapke system mein security vulnerabilities ko identify aur manage karne mein madad karta hai.",
     },
-    {
-      topic: "Installing Your Favorite Tools",
-      description: {
-        english:
-          "Installing various ethical hacking tools according to your needs can enhance your cybersecurity capabilities and make your work more efficient.",
-        hindi:
-          "Aapke needs ke according alag-alag ethical hacking tools install karna aapki cybersecurity capabilities ko enhance kar sakta hai aur aapke work ko zyada efficient bana sakta hai.",
-      },
-      examples: [
-        "Installing tools like Burp Suite, Metasploit, and Hydra to perform various security tasks.",
-      ],
-      commands: [],
+    examples: [
+      "Using OpenVAS to run security scans and identify potential issues.",
+    ],
+    commands: [],
+  },
+  {
+    topic: "Installing Your Favorite Tools",
+    description: {
+      english:
+        "Installing various ethical hacking tools according to your needs can enhance your cybersecurity capabilities and make your work more efficient.",
+      hindi:
+        "Aapke needs ke according alag-alag ethical hacking tools install karna aapki cybersecurity capabilities ko enhance kar sakta hai aur aapke work ko zyada efficient bana sakta hai.",
     },
-    {
-      topic: "Setting Up a VPN",
-      description: {
-        english:
-          "Setting up a VPN helps in securing your internet connection by masking your IP address and encrypting your network traffic.",
-        hindi:
-          "VPN setup karna aapke internet connection ko secure karta hai by masking your IP address aur encrypting your network traffic.",
-      },
-      examples: [
-        "Installing NordVPN on Kali Linux to ensure secure and private internet access.",
-      ],
-      commands: [
-        "sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)",
-        "nordvpn login",
-        "nordvpn connect",
-      ],
+    examples: [
+      "Installing tools like Burp Suite, Metasploit, and Hydra to perform various security tasks.",
+    ],
+    commands: [],
+  },
+  {
+    topic: "Setting Up a VPN",
+    description: {
+      english:
+        "Setting up a VPN helps in securing your internet connection by masking your IP address and encrypting your network traffic.",
+      hindi:
+        "VPN setup karna aapke internet connection ko secure karta hai by masking your IP address aur encrypting your network traffic.",
     },
-    {
-      topic: "Educate Yourself!",
-      description: {
-        english:
-          "Continuous learning and education are essential for staying updated with the latest developments in cybersecurity and improving your skills.",
-        hindi:
-          "Continuous learning aur education zaroori hai taaki aap latest developments se updated rahe aur apne skills improve kar sakein.",
-      },
-      examples: [
-        "Enrolling in courses like 'Practical Ethical Hacking' by Heath Adams to enhance your cybersecurity skills.",
-      ],
-      commands: [],
+    examples: [
+      "Installing NordVPN on Kali Linux to ensure secure and private internet access.",
+    ],
+    commands: [
+      "sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)",
+      "nordvpn login",
+      "nordvpn connect",
+    ],
+  },
+  {
+    topic: "Educate Yourself!",
+    description: {
+      english:
+        "Continuous learning and education are essential for staying updated with the latest developments in cybersecurity and improving your skills.",
+      hindi:
+        "Continuous learning aur education zaroori hai taaki aap latest developments se updated rahe aur apne skills improve kar sakein.",
     },
-  ],
+    examples: [
+      "Enrolling in courses like 'Practical Ethical Hacking' by Heath Adams to enhance your cybersecurity skills.",
+    ],
+    commands: [],
+  },
+
+  {
+    topic: "Installing Tree",
+    description: {
+      english:
+        "Installing the 'tree' package allows you to visualize the directory structure in a tree-like format.",
+      hindi:
+        "'tree' package install karna directory structure ko tree-like format mein visualize karne ki suvidha deta hai.",
+    },
+    commands: [
+      {
+        command: "sudo apt install tree",
+        description: {
+          english:
+            "Installs the 'tree' package on Debian-based distributions like Ubuntu.",
+          hindi:
+            "'tree' package ko Debian-based distributions jaise Ubuntu par install karta hai.",
+        },
+        examples: ["sudo apt install tree"],
+      },
+      {
+        command: "sudo dnf install tree",
+        description: {
+          english:
+            "Installs the 'tree' package on Red Hat-based distributions like Fedora.",
+          hindi:
+            "'tree' package ko Red Hat-based distributions jaise Fedora par install karta hai.",
+        },
+        examples: ["sudo dnf install tree"],
+      },
+      {
+        command: "sudo zypper install tree",
+        description: {
+          english: "Installs the 'tree' package on SUSE-based distributions.",
+          hindi:
+            "'tree' package ko SUSE-based distributions par install karta hai.",
+        },
+        examples: ["sudo zypper install tree"],
+      },
+      {
+        command: "sudo pacman -S tree",
+        description: {
+          english: "Installs the 'tree' package on Arch-based distributions.",
+          hindi:
+            "'tree' package ko Arch-based distributions par install karta hai.",
+        },
+        examples: ["sudo pacman -S tree"],
+      },
+    ],
+  },
+  {
+    topic: "Viewing Directory Tree",
+    description: {
+      english:
+        "The 'tree' command displays the directory structure starting from a specified directory.",
+      hindi:
+        "'tree' command specified directory se directory structure ko display karta hai.",
+    },
+    commands: [
+      {
+        command: "tree /",
+        description: {
+          english:
+            "Displays the entire directory tree starting from the root directory (/).",
+          hindi:
+            "Root directory (/) se poora directory tree display karta hai.",
+        },
+        examples: ["tree /"],
+      },
+      {
+        command: "tree -L 1 /",
+        description: {
+          english:
+            "Shows the directory tree from the root directory (/) but limits the view to only the first level of directories and files.",
+          hindi:
+            "Root directory (/) se directory tree ko dikhata hai lekin view ko pehle level ki directories aur files tak hi limit karta hai.",
+        },
+        examples: ["tree -L 1 /"],
+      },
+    ],
+  },
+  {
+    topic: "Changing Directory",
+    description: {
+      english:
+        "The 'cd' command changes the current working directory to the specified path.",
+      hindi:
+        "'cd' command current working directory ko specified path par change karta hai.",
+    },
+    commands: [
+      {
+        command: "cd <directory>",
+        description: {
+          english:
+            "Changes the current working directory to the specified directory. Replace '<directory>' with the path to the desired directory.",
+          hindi:
+            "Current working directory ko specified directory mein change karta hai. '<directory>' ko desired directory ke path se replace karein.",
+        },
+        examples: ["cd /home/user/Documents"],
+      },
+    ],
+  },
+  {
+    topic: "Printing Working Directory",
+    description: {
+      english:
+        "The 'pwd' command prints the path of the current working directory.",
+      hindi: "'pwd' command current working directory ka path print karta hai.",
+    },
+    commands: [
+      {
+        command: "pwd",
+        description: {
+          english:
+            "Prints the path of the current working directory. Helps you determine your current location in the filesystem.",
+          hindi:
+            "Current working directory ka path print karta hai. Yeh aapko filesystem mein apni current location determine karne mein madad karta hai.",
+        },
+        examples: ["pwd"],
+      },
+    ],
+  },
+  {
+    topic: "Listing Directory Contents",
+    description: {
+      english: "The 'ls' command lists the contents of the current directory.",
+      hindi: "'ls' command current directory ke contents ko list karta hai.",
+    },
+    commands: [
+      {
+        command: "ls",
+        description: {
+          english:
+            "Lists the files and directories in the current working directory. Provides a basic listing without any options.",
+          hindi:
+            "Current working directory mein files aur directories ko list karta hai. Options ke bina basic listing provide karta hai.",
+        },
+        examples: ["ls"],
+      },
+    ],
+  },
+  {
+    topic: "Creating Directories",
+    description: {
+      english:
+        "Learn how to create directories using the `mkdir` command. This includes creating a single directory, multiple directories, and nested directories with the `-p` option.",
+      hindi:
+        "Directories kaise create karte hain `mkdir` command se? Ek directory, multiple directories aur `-p` option ke saath nested directories banana sikhein.",
+    },
+    examples: [
+      "mkdir /tmp/tutorial",
+      "mkdir dir1 dir2 dir3",
+      "mkdir -p dir4/dir5/dir6",
+    ],
+    commands: [
+      "mkdir /tmp/tutorial",
+      "mkdir dir1 dir2 dir3",
+      "mkdir -p dir4/dir5/dir6",
+    ],
+  },
+  {
+    topic: "Handling Directories with Spaces",
+    description: {
+      english:
+        "Understand how to create directories with spaces in their names by using quotes or escaping spaces with backslashes.",
+      hindi:
+        "Spaces wale names wali directories kaise banayein? Quotes ya backslashes ka use karke samjhein.",
+    },
+    examples: ['mkdir "folder 1"', "mkdir 'folder 2'", "mkdir folder\\ 3"],
+    commands: ['mkdir "folder 1"', "mkdir 'folder 2'", "mkdir folder\\ 3"],
+  },
+  {
+    topic: "Creating Files Using Redirection",
+    description: {
+      english:
+        "Learn how to create files by redirecting command output to a file. This includes using the `echo` command and handling file redirection.",
+      hindi:
+        "Command output ko file mein redirect karke files kaise banayein, yeh sikhein. Isme `echo` command aur file redirection shamil hai.",
+    },
+    examples: [
+      "ls > output.txt",
+      'echo "This is a test" > test_1.txt',
+      "cat test_1.txt test_2.txt > combined.txt",
+    ],
+    commands: [
+      "ls > output.txt",
+      'echo "This is a test" > test_1.txt',
+      "cat test_1.txt test_2.txt > combined.txt",
+    ],
+  },
+  {
+    topic: "Viewing and Navigating Files",
+    description: {
+      english:
+        "Explore methods to view and navigate through files. Use `cat` to concatenate file contents and `less` to view large files page by page.",
+      hindi:
+        "Files ko dekhne aur navigate karne ke tareeke jaanen. `cat` se file content join karein aur bade files ko page by page dekhne ke liye `less` ka use karein.",
+    },
+    examples: ["cat test_1.txt test_2.txt", "less combined.txt"],
+    commands: ["cat test_1.txt test_2.txt", "less combined.txt"],
+  },
+  {
+    topic: "Case Sensitivity",
+    description: {
+      english:
+        "Understand that Unix systems are case-sensitive, meaning file names like `A.txt` and `a.txt` are considered different. Learn to avoid creating files with names differing only by case.",
+      hindi:
+        "Unix systems case-sensitive hote hain. Iska matlab hai `A.txt` aur `a.txt` alag files hain. Sirf case badal kar files banane se bachein.",
+    },
+    examples: [
+      'echo "Lower case" > a.txt',
+      'echo "Upper case" > A.TXT',
+      'echo "Mixed case" > A.txt',
+    ],
+    commands: [
+      'echo "Lower case" > a.txt',
+      'echo "Upper case" > A.TXT',
+      'echo "Mixed case" > A.txt',
+    ],
+  },
+  {
+    topic: "Moving and Manipulating Files",
+    description: {
+      english:
+        "Learn how to move, copy, and rename files and directories using the `mv` and `cp` commands. This includes moving files between directories, copying files, and renaming files or directories.",
+      hindi:
+        "Files aur directories ko move, copy aur rename kaise karte hain `mv` aur `cp` commands se? Yeh include karta hai files ko directories ke beech move karna, files ko copy karna aur files ya directories ko rename karna.",
+    },
+    examples: [
+      "mv combined.txt dir1",
+      "mv dir1/* .",
+      "mv combined.txt test_* dir3 dir2",
+      "mv dir2/combined.txt dir4/dir5/dir6",
+      "cp dir4/dir5/dir6/combined.txt .",
+      "cp combined.txt backup_combined.txt",
+      "mv backup_combined.txt combined_backup.txt",
+      'mv "folder 1" folder_1',
+    ],
+    commands: [
+      "mv combined.txt dir1",
+      "mv dir1/* .",
+      "mv combined.txt test_* dir3 dir2",
+      "mv dir2/combined.txt dir4/dir5/dir6",
+      "cp dir4/dir5/dir6/combined.txt .",
+      "cp combined.txt backup_combined.txt",
+      "mv backup_combined.txt combined_backup.txt",
+      'mv "folder 1" folder_1',
+    ],
+  },
+  {
+    topic: "Deleting Files and Folders",
+    description: {
+      english:
+        "Understand how to delete files and directories using the `rm` and `rmdir` commands. This includes deleting single files, multiple files, and empty or non-empty directories, with caution to avoid accidental data loss.",
+      hindi:
+        "Files aur directories ko delete karna `rm` aur `rmdir` commands se kaise karte hain, yeh samjhein. Isme single files, multiple files aur empty ya non-empty directories ko delete karna shamil hai, bina accidental data loss ke.",
+    },
+    examples: [
+      "rm dir4/dir5/dir6/combined.txt combined_backup.txt",
+      "rm folder_*",
+      "rmdir folder_*",
+      "rm -r folder_6",
+      "rmdir -p dir1/dir2/dir3",
+    ],
+    commands: [
+      "rm dir4/dir5/dir6/combined.txt combined_backup.txt",
+      "rm folder_*",
+      "rmdir folder_*",
+      "rm -r folder_6",
+      "rmdir -p dir1/dir2/dir3",
+    ],
+  },
+  {
+    topic: "Text Manipulation with Pipes",
+    description: {
+      english:
+        "Explore how to use pipes to connect commands and manipulate text data. Learn to use `wc`, `ls`, and `uniq` in combination to count lines, list directory contents, and filter unique lines, all without creating temporary files.",
+      hindi:
+        "Pipes ka use karke commands ko connect karna aur text data ko manipulate karna sikhein. `wc`, `ls`, aur `uniq` ka istemal karke lines count karna, directory contents list karna, aur unique lines filter karna bina temporary files create kiye.",
+    },
+    examples: [
+      "wc -l combined.txt",
+      "ls ~ | wc -l",
+      "ls /etc | less",
+      "cat combined.txt | uniq | wc -l",
+      "cat combined.txt | uniq | less",
+      "sort combined.txt | uniq | wc -l",
+    ],
+    commands: [
+      "wc -l combined.txt",
+      "ls ~ | wc -l",
+      "ls /etc | less",
+      "cat combined.txt | uniq | wc -l",
+      "cat combined.txt | uniq | less",
+      "sort combined.txt | uniq | wc -l",
+    ],
+  },
+  {
+    topic: "Using Man Pages for Command Documentation",
+    description: {
+      english:
+        "Learn how to use the `man` command to access manual pages for Unix commands. This helps in understanding command options and usage, particularly when dealing with commands like `uniq` and `sort`.",
+      hindi:
+        "Unix commands ke manual pages ko access karne ke liye `man` command ka use kaise karte hain, yeh sikhein. Yeh command options aur usage ko samajhne mein madad karta hai, khaaskar `uniq` aur `sort` jaise commands ke saath.",
+    },
+    examples: ["man uniq", "man sort"],
+    commands: ["man uniq", "man sort"],
+  },
+  {
+    topic: "Understanding the Superuser (Root) Account",
+    description: {
+      english:
+        "The superuser, often called 'root', has complete control over a Unix system. Root can modify or delete any file, alter system settings, and perform actions that could potentially disrupt the system. Use the root account with caution to avoid accidental system-wide changes or security risks.",
+      hindi:
+        "Superuser, jise aksar 'root' kaha jata hai, Unix system par poora control rakhta hai. Root kisi bhi file ko modify ya delete kar sakta hai, system settings ko badal sakta hai, aur aise actions perform kar sakta hai jo system ko disrupt kar sakte hain. Root account ka upyog saavdhani se karein taaki aap accidental system-wide changes ya security risks se bach sakein.",
+    },
+    examples: ["sudo ls /etc/shadow", "sudo rm -rf /important_folder"],
+    commands: ["sudo ls /etc/shadow", "sudo rm -rf /important_folder"],
+  },
+  {
+    topic: "Using `sudo` for Temporary Superuser Access",
+    description: {
+      english:
+        "`sudo` allows users to execute commands with superuser privileges without needing to log in as root. This minimizes the risk of accidental system-wide changes. Always understand what a command does before running it with `sudo`, as it grants the command full superuser capabilities.",
+      hindi:
+        "`sudo` users ko root privileges ke saath commands execute karne ki suvidha deta hai bina root me login kiye. Yeh accidental system-wide changes ka risk kam karta hai. Hamesha samajhkar hi `sudo` ke saath command run karein, kyunki yeh command ko poora superuser access deta hai.",
+    },
+    examples: ["sudo apt update", "sudo apt install tree"],
+    commands: ["sudo apt update", "sudo apt install tree"],
+  },
+  {
+    topic: "Working with Hidden Files and Directories",
+    description: {
+      english:
+        "Hidden files and directories in Unix systems are files that start with a dot ('.') in their name. These are used for configuration and settings, and are hidden from normal directory listings to reduce clutter. Use the `-a` switch with `ls` to display these hidden items.",
+      hindi:
+        "Unix systems me hidden files aur directories wo files hote hain jo apne naam ke shuruat me ek dot ('.') se shuru hote hain. Yeh files configuration aur settings ke liye use hote hain aur normal directory listings se chhupaye jate hain taaki clutter kam ho. Hidden items dikhane ke liye `ls` command ke sath `-a` switch ka use karein.",
+    },
+    examples: ["ls -a", "tree -a"],
+    commands: ["ls -a", "tree -a"],
+  },
+  {
+    topic: "Cleaning Up After Experimentation",
+    description: {
+      english:
+        "After completing your tasks, it’s good practice to clean up by removing any experimental directories or files you’ve created. This helps maintain a tidy workspace and avoids clutter. Use commands like `rm -r` to remove directories and check with `ls` to ensure they are gone.",
+      hindi:
+        "Apne tasks complete karne ke baad, yeh acchi practice hai ki aap apne banaye gaye experimental directories ya files ko remove kar dein. Yeh aapke workspace ko saaf aur uncluttered rakhta hai. Directories remove karne ke liye `rm -r` command ka use karein aur `ls` command se ensure karein ki woh directories chali gayi hain.",
+    },
+    examples: ["rm -r /tmp/tutorial", "ls /tmp"],
+    commands: ["rm -r /tmp/tutorial", "ls /tmp"],
+  },
 ];
 
 export default networkingConceptsAndCommands;
