@@ -296,6 +296,182 @@ const networkingConceptsAndCommands = [
       "reaver --bssid 00:11:22:33:44:55 --channel 6 --interface wlan0 -vvv --no-associate",
     ],
   },
+  [
+    {
+      topic: "Changing the Keyboard Layout",
+      description: {
+        english:
+          "Adjusting the keyboard layout ensures that you can type special characters correctly and use the keyboard effectively according to your locale.",
+        hindi:
+          "Keyboard layout ko adjust karna yeh sunishchit karta hai ki aap special characters sahi se type kar sakein aur apne locale ke anusaar keyboard ka sahi upayog kar sakein.",
+      },
+      examples: [
+        "Using 'sudo dpkg-reconfigure keyboard-configuration' to change the keyboard layout via the terminal.",
+      ],
+      commands: [
+        "sudo dpkg-reconfigure keyboard-configuration",
+        "sudo service keyboard-setup restart",
+      ],
+    },
+    {
+      topic: "Updating Kali Linux",
+      description: {
+        english:
+          "Updating your system ensures that you have the latest security patches and software updates. This step is crucial for maintaining system stability and security.",
+        hindi:
+          "System ko update karna sunishchit karta hai ki aapke paas latest security patches aur software updates hain. Yeh step system ki stability aur security banaye rakhne ke liye mahatvapurn hai.",
+      },
+      examples: [
+        "Running 'sudo apt update -y && sudo apt upgrade -y' to update and upgrade all installed packages.",
+      ],
+      commands: [
+        "sudo apt update -y && sudo apt upgrade -y",
+        "sudo apt autoremove -y",
+        "sudo apt update && sudo dist-upgrade -y",
+      ],
+    },
+    {
+      topic: "Changing Default Password",
+      description: {
+        english:
+          "Changing the default password helps secure your system from unauthorized access by ensuring that the default credentials are no longer in use.",
+        hindi:
+          "Default password ko change karna aapke system ko unauthorized access se secure karta hai aur ensure karta hai ki default credentials ka upayog na ho.",
+      },
+      examples: [
+        "Using 'passwd' to change the default password for the current user.",
+      ],
+      commands: ["passwd", "sudo passwd root"],
+    },
+    {
+      topic: "Taking a Snapshot (VM only)",
+      description: {
+        english:
+          "Taking a snapshot of your VM allows you to save the current state of your system. This is useful for reverting to a stable state if any issues arise.",
+        hindi:
+          "VM ka snapshot lena aapke system ki current state ko save kar leta hai. Yeh useful hai agar koi issue aata hai to aap stable state par wapas ja sakte hain.",
+      },
+      examples: [
+        "Creating a snapshot in VirtualBox to save the state of a fresh installation.",
+      ],
+      commands: ["VirtualBox UI steps to create a snapshot"],
+    },
+    {
+      topic: "Creating a Low Privileged User Account",
+      description: {
+        english:
+          "Creating a low-privileged user account helps in enhancing security by preventing unnecessary access to root privileges.",
+        hindi:
+          "Low-privileged user account banana security ko enhance karta hai aur root privileges ke unnecessary access ko prevent karta hai.",
+      },
+      examples: [
+        "Creating a new user with 'sudo adduser username' and adding it to the sudo group.",
+      ],
+      commands: [
+        "sudo adduser username",
+        "sudo usermod -aG sudo username",
+        "sudo chsh -s /bin/bash username",
+      ],
+    },
+    {
+      topic: "Installing Guake Terminal",
+      description: {
+        english:
+          "Guake Terminal provides a convenient drop-down terminal interface, which can enhance productivity and ease of use for frequent terminal tasks.",
+        hindi:
+          "Guake Terminal ek convenient drop-down terminal interface provide karta hai, jo frequent terminal tasks ke liye productivity aur ease of use ko enhance karta hai.",
+      },
+      examples: [
+        "Installing Guake Terminal with 'sudo apt-get install guake' and configuring it to start automatically.",
+      ],
+      commands: [
+        "sudo apt-get install guake",
+        "sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart/",
+      ],
+    },
+    {
+      topic: "Customizing Your Terminal",
+      description: {
+        english:
+          "Customizing your terminal helps improve your workflow by tailoring the appearance and functionality to your preferences.",
+        hindi:
+          "Terminal ko customize karna aapke workflow ko improve karta hai by tailoring appearance aur functionality ko aapke preferences ke according.",
+      },
+      examples: [
+        "Switching from Bash to ZSH for an enhanced terminal experience.",
+      ],
+      commands: [],
+    },
+    {
+      topic: "Installing Your Favorite Code Editor",
+      description: {
+        english:
+          "Installing a code editor like Visual Studio Code provides a powerful environment for coding, debugging, and managing your development projects.",
+        hindi:
+          "Code editor jaise Visual Studio Code install karna aapko coding, debugging, aur development projects manage karne ke liye ek powerful environment provide karta hai.",
+      },
+      examples: [
+        "Installing Visual Studio Code using 'sudo apt install ./code_yourversion_amd64.deb'.",
+      ],
+      commands: ["sudo apt install ./code_yourversion_amd64.deb"],
+    },
+    {
+      topic: "Installing OpenVAS",
+      description: {
+        english:
+          "OpenVAS is a comprehensive vulnerability scanner that helps in identifying and managing security vulnerabilities in your system.",
+        hindi:
+          "OpenVAS ek comprehensive vulnerability scanner hai jo aapke system mein security vulnerabilities ko identify aur manage karne mein madad karta hai.",
+      },
+      examples: [
+        "Using OpenVAS to run security scans and identify potential issues.",
+      ],
+      commands: [],
+    },
+    {
+      topic: "Installing Your Favorite Tools",
+      description: {
+        english:
+          "Installing various ethical hacking tools according to your needs can enhance your cybersecurity capabilities and make your work more efficient.",
+        hindi:
+          "Aapke needs ke according alag-alag ethical hacking tools install karna aapki cybersecurity capabilities ko enhance kar sakta hai aur aapke work ko zyada efficient bana sakta hai.",
+      },
+      examples: [
+        "Installing tools like Burp Suite, Metasploit, and Hydra to perform various security tasks.",
+      ],
+      commands: [],
+    },
+    {
+      topic: "Setting Up a VPN",
+      description: {
+        english:
+          "Setting up a VPN helps in securing your internet connection by masking your IP address and encrypting your network traffic.",
+        hindi:
+          "VPN setup karna aapke internet connection ko secure karta hai by masking your IP address aur encrypting your network traffic.",
+      },
+      examples: [
+        "Installing NordVPN on Kali Linux to ensure secure and private internet access.",
+      ],
+      commands: [
+        "sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)",
+        "nordvpn login",
+        "nordvpn connect",
+      ],
+    },
+    {
+      topic: "Educate Yourself!",
+      description: {
+        english:
+          "Continuous learning and education are essential for staying updated with the latest developments in cybersecurity and improving your skills.",
+        hindi:
+          "Continuous learning aur education zaroori hai taaki aap latest developments se updated rahe aur apne skills improve kar sakein.",
+      },
+      examples: [
+        "Enrolling in courses like 'Practical Ethical Hacking' by Heath Adams to enhance your cybersecurity skills.",
+      ],
+      commands: [],
+    },
+  ],
 ];
 
 export default networkingConceptsAndCommands;
