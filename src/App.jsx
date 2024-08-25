@@ -13,7 +13,7 @@ import {
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import data from "./data";
+import networkingConceptsAndCommands from "./data";
 
 // Create a dark theme
 const darkTheme = createTheme({
@@ -32,17 +32,17 @@ const darkTheme = createTheme({
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
 
   const handleSearch = (event) => {
     const query = event.target.value.toLowerCase();
     setSearchQuery(query);
-
-    const filtered = data.filter((item) =>
-      item.title.toLowerCase().includes(query)
-    );
-    setFilteredData(filtered);
   };
+
+  const filteredData = searchQuery
+    ? networkingConceptsAndCommands.filter((item) =>
+        item.topic.toLowerCase().includes(searchQuery)
+      )
+    : networkingConceptsAndCommands;
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -61,26 +61,19 @@ const App = () => {
             style: { color: "#ffffff", borderColor: "#ffffff" },
           }}
         />
-        {searchQuery === "" ? (
-          <Typography
-            variant="h6"
-            color="textSecondary"
-            style={{ marginTop: 20, textAlign: "center" }}
-          >
-            Make a search
-          </Typography>
-        ) : filteredData.length > 0 ? (
-          <Grid container spacing={3} style={{ marginTop: 20 }}>
-            {filteredData.map((item, index) => (
-              <Grid item xs={12} key={index}>
-                <DropdownCard
-                  title={item.title}
-                  description={item.description}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        ) : (
+        <Grid container spacing={3} style={{ marginTop: 20 }}>
+          {filteredData.map((item, index) => (
+            <Grid item xs={12} key={index}>
+              <DropdownCard
+                topic={item.topic}
+                description={item.description}
+                examples={item.examples}
+                commands={item.commands}
+              />
+            </Grid>
+          ))}
+        </Grid>
+        {filteredData.length === 0 && (
           <Typography
             variant="h6"
             color="textSecondary"
@@ -94,7 +87,7 @@ const App = () => {
   );
 };
 
-const DropdownCard = ({ title, description }) => {
+const DropdownCard = ({ topic, description, examples, commands }) => {
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
@@ -110,7 +103,7 @@ const DropdownCard = ({ title, description }) => {
           component="div"
           style={{ color: "rgba(255,255,255,0.9)" }}
         >
-          {title}
+          {topic}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -125,17 +118,39 @@ const DropdownCard = ({ title, description }) => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography variant="body2" color="white">
-            {/* Using pre and code tags for code formatting */}
-            <pre
-              style={{
-                whiteSpace: "pre-wrap",
-                wordBreak: "break-word",
-                fontSize: "14px",
-              }}
-            >
-              <code>{description}</code>
-            </pre>
+          <Typography
+            variant="body2"
+            color="white"
+            style={{ fontSize: "24px" }}
+          >
+            <strong>Description (English):</strong>
+            <p>{description.english}</p>
+            <strong>Description (Hindi):</strong>
+            <p>{description.hindi}</p>
+            {examples && (
+              <>
+                <strong>Examples:</strong>
+                <ul>
+                  {examples.map((example, idx) => (
+                    <li key={idx}>{example}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {commands && (
+              <>
+                <strong>Commands:</strong>
+                <pre
+                  style={{
+                    whiteSpace: "pre-wrap",
+                    wordBreak: "break-word",
+                    fontSize: "14px",
+                  }}
+                >
+                  <code>{commands.join("\n")}</code>
+                </pre>
+              </>
+            )}
           </Typography>
         </CardContent>
       </Collapse>
